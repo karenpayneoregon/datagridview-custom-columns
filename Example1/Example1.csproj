@@ -140,9 +140,6 @@
   <ItemGroup>
     <Compile Include="Classes\EntityOperations.cs" />
     <Compile Include="Controls\CalendarColumn.cs" />
-    <Compile Include="Controls\CueTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controls\TimeColumn.cs" />
     <Compile Include="Extensions\BindingListExtensions.cs" />
     <Compile Include="Extensions\RoomExtensions.cs" />
@@ -167,6 +164,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -181,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

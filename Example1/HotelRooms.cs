@@ -28,16 +28,41 @@ namespace Example1
 
             CurrentRowButton1.Enabled = false;
             CurrentRowButton2.Enabled = false;
+            // note the all button is done differently
+
+
             dataGridView1.AutoGenerateColumns = false;
 
             Shown += HotelRooms_Shown;
             dataGridView1.EditingControlShowing += DataGridView1_EditingControlShowing;
+            dataGridView1.CellEndEdit += DataGridView1_CellEndEdit;
 
         }
+
+        private void DataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null) return;
+
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "StartDateColumn")
+            {
+                var value = _bindingListContacts.StartDate(_currentIndex);
+                Console.WriteLine($"          CellEndEdit {value:d}");
+            }
+        }
+
         /// <summary>
         /// Keeps track of the DataGridView row index for EditingControlShowing event
         /// </summary>
-        private int _currentIndex = 0; 
+        private int _currentIndex = 0;
+        /// <summary>
+        /// Occurs when a control for editing a cell is showing. In this event
+        /// a check is first made to ensure there is a current row in the DataGridView
+        /// where if all rows were removed there is no current row. If there is a current
+        /// row determine which column and column type followed inspecting values and
+        /// if a numeric column setup an event to allow only numbers.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if (dataGridView1.CurrentRow != null)
@@ -56,7 +81,7 @@ namespace Example1
                     if (dataGridView1.CurrentRow != null)
                     {
                         var value = _bindingListContacts.StartDate(_currentIndex);
-                        Console.WriteLine($"{value:d}");
+                        Console.WriteLine($"EditingControlShowing {value:d}");
                     }
                 }
             }
@@ -74,10 +99,10 @@ namespace Example1
             {
                 if (dataGridView1.CurrentCell.OwningColumn.Name == "RoomIdentifierColumn")
                 {
-                    e.Control.KeyPress -= RoomNumber_KeyPress;
+                    e.Control.KeyPress -= RoomNumberNumericOnly_KeyPress;
                     if (e.Control is TextBox tb)
                     {
-                        tb.KeyPress += RoomNumber_KeyPress;
+                        tb.KeyPress += RoomNumberNumericOnly_KeyPress;
                     }
                 }
             }
@@ -87,7 +112,7 @@ namespace Example1
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RoomNumber_KeyPress(object sender, KeyPressEventArgs e)
+        private void RoomNumberNumericOnly_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -104,6 +129,8 @@ namespace Example1
 
             CurrentRowButton1.Enabled = true;
             CurrentRowButton2.Enabled = true;
+            // note the all button is done differently
+
         }
         /// <summary>
         /// Demonstration for BindingList to get current room

@@ -4,6 +4,10 @@ using System.Windows.Forms;
 
 namespace Example1.Controls
 {
+    /// <summary>
+    /// Provides a calendar column for the DataGridView control.
+    /// Original code from Microsoft https://tinyurl.com/y8nr9okh
+    /// </summary>
     public class CalendarColumn : DataGridViewColumn
     {
         public CalendarColumn() : base(new CalendarCell())
@@ -31,7 +35,9 @@ namespace Example1.Controls
             Style.Format = "d"; // Use the short date format.
             EmptyDate = DateTime.Now;
         }
-
+        /// <summary>
+        /// Set default Date
+        /// </summary>
         public DateTime EmptyDate { get; set; }
 
         public override void InitializeEditingControl(int rowIndex, object initialFormattedValue, DataGridViewCellStyle dataGridViewCellStyle)
@@ -60,7 +66,7 @@ namespace Example1.Controls
     internal class CalendarEditingControl : DateTimePicker, IDataGridViewEditingControl
     {
         private DataGridView _dataGridViewControl;
-        private bool _valueIsChanged = false;
+        private bool _valueChanged = false;
         private int _rowIndexNumber;
 
         public CalendarEditingControl()
@@ -89,6 +95,8 @@ namespace Example1.Controls
             CalendarForeColor = dataGridViewCellStyle.ForeColor;
             CalendarMonthBackground = dataGridViewCellStyle.BackColor;
         }
+
+        /// <inheritdoc />
         public int EditingControlRowIndex
         {
             get => _rowIndexNumber;
@@ -124,14 +132,14 @@ namespace Example1.Controls
         }
         public bool EditingControlValueChanged
         {
-            get => _valueIsChanged;
-            set => _valueIsChanged = value;
+            get => _valueChanged;
+            set => _valueChanged = value;
         }
         Cursor IDataGridViewEditingControl.EditingPanelCursor => EditingControlCursor;
         public Cursor EditingControlCursor => base.Cursor;
         protected override void OnValueChanged(EventArgs eventArgs)
         {
-            _valueIsChanged = true;
+            _valueChanged = true;
             EditingControlDataGridView.NotifyCurrentCellDirty(true);
             base.OnValueChanged(eventArgs);
         }

@@ -11,7 +11,7 @@ namespace Example1.Classes
         /// <summary>
         /// Read rooms from database asynchronously
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of rooms</returns>
         public static async Task<List<Room>> GetRooms()
         {
             var rooms = new List<Room>();
