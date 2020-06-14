@@ -31,34 +31,40 @@ namespace Example1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CurrentRowButton = new System.Windows.Forms.Button();
+            this.CurrentRowButton1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CurrentRowButton2 = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calendarColumn1 = new Example1.Controls.CalendarColumn();
+            this.timeColumn1 = new Example1.Controls.TimeColumn();
             this.RoomIdentifierColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartDateColumn = new Example1.Controls.CalendarColumn();
             this.StartTimeColumn = new Example1.Controls.TimeColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AllButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.CurrentRowButton);
+            this.panel1.Controls.Add(this.AllButton);
+            this.panel1.Controls.Add(this.CurrentRowButton2);
+            this.panel1.Controls.Add(this.CurrentRowButton1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 108);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(355, 48);
             this.panel1.TabIndex = 0;
             // 
-            // CurrentRowButton
+            // CurrentRowButton1
             // 
-            this.CurrentRowButton.Location = new System.Drawing.Point(12, 13);
-            this.CurrentRowButton.Name = "CurrentRowButton";
-            this.CurrentRowButton.Size = new System.Drawing.Size(75, 23);
-            this.CurrentRowButton.TabIndex = 2;
-            this.CurrentRowButton.Text = "Current";
-            this.CurrentRowButton.UseVisualStyleBackColor = true;
-            this.CurrentRowButton.Click += new System.EventHandler(this.CurrentRowButton_Click);
+            this.CurrentRowButton1.Location = new System.Drawing.Point(12, 13);
+            this.CurrentRowButton1.Name = "CurrentRowButton1";
+            this.CurrentRowButton1.Size = new System.Drawing.Size(75, 23);
+            this.CurrentRowButton1.TabIndex = 2;
+            this.CurrentRowButton1.Text = "Current 1";
+            this.CurrentRowButton1.UseVisualStyleBackColor = true;
+            this.CurrentRowButton1.Click += new System.EventHandler(this.CurrentRowButton1_Click);
             // 
             // dataGridView1
             // 
@@ -73,6 +79,36 @@ namespace Example1
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(355, 108);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // CurrentRowButton2
+            // 
+            this.CurrentRowButton2.Location = new System.Drawing.Point(107, 13);
+            this.CurrentRowButton2.Name = "CurrentRowButton2";
+            this.CurrentRowButton2.Size = new System.Drawing.Size(75, 23);
+            this.CurrentRowButton2.TabIndex = 3;
+            this.CurrentRowButton2.Text = "Current 2";
+            this.CurrentRowButton2.UseVisualStyleBackColor = true;
+            this.CurrentRowButton2.Click += new System.EventHandler(this.CurrentRowButton2_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Identifier";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Room";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // calendarColumn1
+            // 
+            this.calendarColumn1.DataPropertyName = "StartDate";
+            this.calendarColumn1.HeaderText = "Start";
+            this.calendarColumn1.Name = "calendarColumn1";
+            // 
+            // timeColumn1
+            // 
+            this.timeColumn1.DataPropertyName = "StartTime";
+            this.timeColumn1.HeaderText = "Time";
+            this.timeColumn1.Name = "timeColumn1";
+            this.timeColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.timeColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // RoomIdentifierColumn
             // 
@@ -94,11 +130,15 @@ namespace Example1
             this.StartTimeColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.StartTimeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // dataGridViewTextBoxColumn1
+            // AllButton
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Identifier";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Room";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.AllButton.Location = new System.Drawing.Point(188, 13);
+            this.AllButton.Name = "AllButton";
+            this.AllButton.Size = new System.Drawing.Size(75, 23);
+            this.AllButton.TabIndex = 4;
+            this.AllButton.Text = "All";
+            this.AllButton.UseVisualStyleBackColor = true;
+            this.AllButton.Click += new System.EventHandler(this.AllButton_Click);
             // 
             // HotelRoomsWindow
             // 
@@ -125,6 +165,10 @@ namespace Example1
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomIdentifierColumn;
         private CalendarColumn StartDateColumn;
         private TimeColumn StartTimeColumn;
-        private System.Windows.Forms.Button CurrentRowButton;
+        private System.Windows.Forms.Button CurrentRowButton1;
+        private System.Windows.Forms.Button CurrentRowButton2;
+        private System.Windows.Forms.Button AllButton;
+        private CalendarColumn calendarColumn1;
+        private TimeColumn timeColumn1;
     }
 }

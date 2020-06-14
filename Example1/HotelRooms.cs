@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 using Example1.Classes;
 using Example1.Controls;
@@ -25,7 +26,8 @@ namespace Example1
         {
             InitializeComponent();
 
-            CurrentRowButton.Enabled = false;
+            CurrentRowButton1.Enabled = false;
+            CurrentRowButton2.Enabled = false;
             dataGridView1.AutoGenerateColumns = false;
 
             Shown += HotelRooms_Shown;
@@ -100,15 +102,50 @@ namespace Example1
 
             dataGridView1.DataSource = _bindingListContacts;
 
-            CurrentRowButton.Enabled = true;
+            CurrentRowButton1.Enabled = true;
+            CurrentRowButton2.Enabled = true;
         }
-
-        private void CurrentRowButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Demonstration for BindingList to get current room
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CurrentRowButton1_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null) return;
 
             var room = _bindingListContacts.Values(dataGridView1.CurrentRow.Index);
+
             MessageBox.Show(room);
+        }
+        /// <summary>
+        /// Demonstration for Room extension to get current room
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CurrentRowButton2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null) return;
+
+            var room = ((Room)dataGridView1.CurrentRow.DataBoundItem).Values();
+            MessageBox.Show(room);
+
+        }
+        /// <summary>
+        /// Demonstration to get all rooms from the DataGridView via DataBoundItem
+        /// Also, note this button is not disabled like the first two buttons
+        /// as this is an alternate to avoiding a runt time exception.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AllButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null) return;
+
+            var allRooms = dataGridView1.Rows
+                .Cast<DataGridViewRow>()
+                .Select(row => row.DataBoundItem as Room);
+
         }
     }
 }

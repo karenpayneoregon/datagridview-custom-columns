@@ -145,6 +145,7 @@
     </Compile>
     <Compile Include="Controls\TimeColumn.cs" />
     <Compile Include="Extensions\BindingListExtensions.cs" />
+    <Compile Include="Extensions\RoomExtensions.cs" />
     <Compile Include="HotelRooms.cs">
       <SubType>Form</SubType>
     </Compile>

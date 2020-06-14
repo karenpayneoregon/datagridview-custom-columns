@@ -37,7 +37,7 @@ namespace Example1.Extensions
         {
             var room = list[position];
 
-            return $"Key:{room.RoomIdentifier}\nNumber: " + 
+            return $"Key: {room.RoomIdentifier}\nNumber: " + 
                    $"{room.Identifier}\nDate: {room.StartDate:d}\nTime: {room.StartTime:T}";
         }
     }
