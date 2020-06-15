@@ -1,6 +1,6 @@
 # DataGridView custom columns C#
 
-Code sample for custom calendar and time column reading data with Entity Framework Core.
+Code sample for custom calendar and time column reading data with Entity Framework Core 3x. On a similar topic, for how to use a DataGridViewComboBox with Entity Framework Core see the following [Technet article](https://social.technet.microsoft.com/wiki/contents/articles/53881.entity-framework-core-3-projections.aspx).
 
 Microsoft TechNet article TBA
 
