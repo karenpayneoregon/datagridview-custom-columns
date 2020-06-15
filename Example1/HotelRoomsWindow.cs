@@ -3,8 +3,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using Example1.Classes;
-using Example1.Controls;
 using Example1.Extensions;
+using Example1.DataGridViewColumns;
 using Example1.Models;
 
 namespace Example1

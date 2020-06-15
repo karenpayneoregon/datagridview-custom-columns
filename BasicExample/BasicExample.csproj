@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{52A76A87-AE0F-43A0-A957-CF277C4C7F8C}</ProjectGuid>
+    <ProjectGuid>{BA28EEF5-3B15-4D31-B008-74D0C8DF8048}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Example1</RootNamespace>
-    <AssemblyName>Example1</AssemblyName>
+    <RootNamespace>BasicExample</RootNamespace>
+    <AssemblyName>BasicExample</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -139,10 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\EntityOperations.cs" />
+    <Compile Include="Contexts\HotelContext.cs" />
     <Compile Include="DataGridViewColumns\CalendarColumn.cs" />
     <Compile Include="DataGridViewColumns\TimeColumn.cs" />
-    <Compile Include="Extensions\BindingListExtensions.cs" />
-    <Compile Include="Extensions\RoomExtensions.cs" />
     <Compile Include="HotelRoomsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,7 +151,6 @@
     <Compile Include="Models\Room.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Contexts\HotelContext.cs" />
     <EmbeddedResource Include="HotelRoomsWindow.resx">
       <DependentUpon>HotelRoomsWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,7 +162,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -180,7 +177,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

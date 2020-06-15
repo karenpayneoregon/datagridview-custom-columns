@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Forms;
 
-namespace Example1.Controls
+namespace Example1.DataGridViewColumns
 {
     /// <summary>
     /// Provides a calendar column for the DataGridView control.

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Example1.Controls
+namespace BasicExample.DataGridViewColumns
 {
     public class TimeColumn : DataGridViewColumn
     {

@@ -1,4 +1,4 @@
-﻿using Example1.Controls;
+﻿using Example1.DataGridViewColumns;
 
 namespace Example1
 {
@@ -36,11 +36,11 @@ namespace Example1
             this.CurrentRowButton1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.RoomIdentifierColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDateColumn = new Example1.Controls.CalendarColumn();
-            this.StartTimeColumn = new Example1.Controls.TimeColumn();
+            this.StartDateColumn = new CalendarColumn();
+            this.StartTimeColumn = new TimeColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calendarColumn1 = new Example1.Controls.CalendarColumn();
-            this.timeColumn1 = new Example1.Controls.TimeColumn();
+            this.calendarColumn1 = new CalendarColumn();
+            this.timeColumn1 = new TimeColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
