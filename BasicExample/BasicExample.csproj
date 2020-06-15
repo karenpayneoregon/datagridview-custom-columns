@@ -139,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\EntityOperations.cs" />
+    <Compile Include="Classes\SortableBindingList.cs" />
     <Compile Include="Contexts\HotelContext.cs" />
     <Compile Include="DataGridViewColumns\CalendarColumn.cs" />
     <Compile Include="DataGridViewColumns\TimeColumn.cs" />

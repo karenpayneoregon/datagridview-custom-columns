@@ -35,12 +35,12 @@ namespace Example1
             this.CurrentRowButton2 = new System.Windows.Forms.Button();
             this.CurrentRowButton1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.RoomIdentifierColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDateColumn = new CalendarColumn();
-            this.StartTimeColumn = new TimeColumn();
+            this.calendarColumn1 = new Example1.DataGridViewColumns.CalendarColumn();
+            this.timeColumn1 = new Example1.DataGridViewColumns.TimeColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calendarColumn1 = new CalendarColumn();
-            this.timeColumn1 = new TimeColumn();
+            this.RoomIdentifierColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDateColumn = new Example1.DataGridViewColumns.CalendarColumn();
+            this.StartTimeColumn = new Example1.DataGridViewColumns.TimeColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -100,6 +100,26 @@ namespace Example1
             this.dataGridView1.Size = new System.Drawing.Size(355, 108);
             this.dataGridView1.TabIndex = 1;
             // 
+            // calendarColumn1
+            // 
+            this.calendarColumn1.DataPropertyName = "StartDate";
+            this.calendarColumn1.HeaderText = "Start";
+            this.calendarColumn1.Name = "calendarColumn1";
+            // 
+            // timeColumn1
+            // 
+            this.timeColumn1.DataPropertyName = "StartTime";
+            this.timeColumn1.HeaderText = "Time";
+            this.timeColumn1.Name = "timeColumn1";
+            this.timeColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.timeColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Identifier";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Room";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
             // RoomIdentifierColumn
             // 
             this.RoomIdentifierColumn.DataPropertyName = "Identifier";
@@ -118,27 +138,6 @@ namespace Example1
             this.StartTimeColumn.HeaderText = "Time";
             this.StartTimeColumn.Name = "StartTimeColumn";
             this.StartTimeColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.StartTimeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Identifier";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Room";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // calendarColumn1
-            // 
-            this.calendarColumn1.DataPropertyName = "StartDate";
-            this.calendarColumn1.HeaderText = "Start";
-            this.calendarColumn1.Name = "calendarColumn1";
-            // 
-            // timeColumn1
-            // 
-            this.timeColumn1.DataPropertyName = "StartTime";
-            this.timeColumn1.HeaderText = "Time";
-            this.timeColumn1.Name = "timeColumn1";
-            this.timeColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.timeColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // HotelRoomsWindow
             // 
@@ -162,13 +161,13 @@ namespace Example1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomIdentifierColumn;
-        private CalendarColumn StartDateColumn;
-        private TimeColumn StartTimeColumn;
         private System.Windows.Forms.Button CurrentRowButton1;
         private System.Windows.Forms.Button CurrentRowButton2;
         private System.Windows.Forms.Button AllButton;
         private CalendarColumn calendarColumn1;
         private TimeColumn timeColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomIdentifierColumn;
+        private CalendarColumn StartDateColumn;
+        private TimeColumn StartTimeColumn;
     }
 }
