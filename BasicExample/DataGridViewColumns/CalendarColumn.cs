@@ -18,7 +18,6 @@ namespace BasicExample.DataGridViewColumns
             get => base.CellTemplate;
             set
             {
-
                 if (value != null && !(value.GetType().IsAssignableFrom(typeof(CalendarCell))))
                 {
                     throw new InvalidCastException("Must be a CalendarCell");
@@ -32,7 +31,6 @@ namespace BasicExample.DataGridViewColumns
     {
         public CalendarCell()
         {
-            Style.Format = "d"; // Use the short date format.
             EmptyDate = DateTime.Now;
         }
         /// <summary>
