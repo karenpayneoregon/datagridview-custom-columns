@@ -21,7 +21,7 @@ namespace Example1
     /// </summary>
     public partial class HotelRoomsWindow : Form
     {
-        private BindingList<Room> _bindingListContacts = new BindingList<Room>();
+        private BindingList<Room> _bindingListRooms = new BindingList<Room>();
         public HotelRoomsWindow()
         {
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace Example1
 
             if (dataGridView1.Columns[e.ColumnIndex].Name == "StartDateColumn")
             {
-                var value = _bindingListContacts.StartDate(_currentIndex);
+                var value = _bindingListRooms.StartDate(_currentIndex);
                 Console.WriteLine($"          CellEndEdit {value:d}");
             }
         }
@@ -80,7 +80,7 @@ namespace Example1
                 {
                     if (dataGridView1.CurrentRow != null)
                     {
-                        var value = _bindingListContacts.StartDate(_currentIndex);
+                        var value = _bindingListRooms.StartDate(_currentIndex);
                         Console.WriteLine($"EditingControlShowing {value:d}");
                     }
                 }
@@ -90,7 +90,7 @@ namespace Example1
             {
                 if (dataGridView1.CurrentRow != null)
                 {
-                    var value = _bindingListContacts.StartTime(_currentIndex);
+                    var value = _bindingListRooms.StartTime(_currentIndex);
                     Console.WriteLine($"{value:T}");
                 }
             }
@@ -123,9 +123,9 @@ namespace Example1
         {
             var roomList = await EntityOperations.GetRooms();
 
-            _bindingListContacts = new BindingList<Room>(roomList);
+            _bindingListRooms = new BindingList<Room>(roomList);
 
-            dataGridView1.DataSource = _bindingListContacts;
+            dataGridView1.DataSource = _bindingListRooms;
 
             CurrentRowButton1.Enabled = true;
             CurrentRowButton2.Enabled = true;
@@ -141,7 +141,7 @@ namespace Example1
         {
             if (dataGridView1.CurrentRow == null) return;
 
-            var room = _bindingListContacts.Values(dataGridView1.CurrentRow.Index);
+            var room = _bindingListRooms.Values(dataGridView1.CurrentRow.Index);
 
             MessageBox.Show(room);
         }

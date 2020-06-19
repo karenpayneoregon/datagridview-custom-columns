@@ -15,7 +15,7 @@ namespace BasicExample
 {
     public partial class HotelRoomsWindow : Form
     {
-        private SortableBindingList<Room> _bindingListContacts = new SortableBindingList<Room>();
+        private SortableBindingList<Room> _bindingListRooms = new SortableBindingList<Room>();
         public HotelRoomsWindow()
         {
             InitializeComponent();
@@ -33,8 +33,8 @@ namespace BasicExample
         {
             var roomList = await EntityOperations.GetRooms();
 
-            _bindingListContacts = new SortableBindingList<Room>(roomList);
-            dataGridView1.DataSource = _bindingListContacts;
+            _bindingListRooms = new SortableBindingList<Room>(roomList);
+            dataGridView1.DataSource = _bindingListRooms;
 
             dataGridView1.CellEndEdit += DataGridView1_CellEndEdit;
             dataGridView1.DataError += DataGridView1_DataError;
