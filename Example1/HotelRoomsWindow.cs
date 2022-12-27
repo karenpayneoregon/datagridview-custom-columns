@@ -76,7 +76,7 @@ namespace Example1
                  * there is only one here so this assertion is not needed but if there
                  * were more calendar columns then assertion is needed
                  */
-                if (dataGridView1.CurrentCell.OwningColumn.Name == "StartDateColumn")
+                if (dataGridView1.CurrentCell.OwningColumn.Name == nameof(StartDateColumn))
                 {
                     if (dataGridView1.CurrentRow != null)
                     {
@@ -97,7 +97,7 @@ namespace Example1
             
             if (e.Control is DataGridViewTextBoxEditingControl )
             {
-                if (dataGridView1.CurrentCell.OwningColumn.Name == "RoomIdentifierColumn")
+                if (dataGridView1.CurrentCell.OwningColumn.Name == nameof(RoomIdentifierColumn))
                 {
                     e.Control.KeyPress -= RoomNumberNumericOnly_KeyPress;
                     if (e.Control is TextBox tb)
@@ -105,6 +105,7 @@ namespace Example1
                         tb.KeyPress += RoomNumberNumericOnly_KeyPress;
                     }
                 }
+                
             }
         }
         /// <summary>
